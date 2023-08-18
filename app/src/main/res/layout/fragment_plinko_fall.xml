@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background02">
+
+    <com.plinfall.game.core.library.CustomImageButton
+        android:id="@+id/menu"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.plinfall.game.core.library.CustomImageButton
+        android:id="@+id/plus"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_margin="10dp"
+        android:src="@drawable/plus"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/menu" />
+
+    <TextView
+        android:id="@+id/balance"
+        style="@style/BasicText"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/balance"
+        android:paddingStart="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/menu"
+        app:layout_constraintEnd_toStartOf="@+id/plus"
+        app:layout_constraintTop_toTopOf="@+id/menu"
+        tools:text="12000" />
+
+    <ImageView
+        android:id="@+id/hole"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/plinko01"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/balance" />
+
+    <ImageView
+        android:id="@+id/field"
+        android:layout_marginTop="50dp"
+        android:layout_width="380dp"
+        android:layout_height="350dp"
+        android:src="@drawable/plinko02"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hole" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/winLayout"
+        android:layout_marginTop="10dp"
+        android:layout_width="0dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginEnd="36dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/field"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toBottomOf="@+id/field">
+        
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/winning01"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/winning06"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/winning03"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/winning05"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/winning04"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+
+        <ImageView
+            android:layout_weight="1"
+            android:src="@drawable/winning02"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"/>
+
+        
+    </LinearLayout>
+
+    <com.plinfall.game.core.library.CustomImageButton
+        android:id="@+id/play"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/play02"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/winLayout" />
+
+    <TextView
+        android:id="@+id/bid"
+        style="@style/BasicText"
+        android:layout_width="110dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/balance"
+        android:paddingStart="20dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/play"
+        app:layout_constraintStart_toStartOf="@+id/play"
+        app:layout_constraintTop_toBottomOf="@+id/play"
+        tools:text="12000" />
+
+    <com.plinfall.game.core.library.CustomImageButton
+        android:id="@+id/arrowRight"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="5dp"
+        android:src="@drawable/arrow01"
+        app:layout_constraintBottom_toBottomOf="@+id/bid"
+        app:layout_constraintStart_toEndOf="@+id/bid"
+        app:layout_constraintTop_toTopOf="@+id/bid" />
+
+    <com.plinfall.game.core.library.CustomImageButton
+        android:id="@+id/arrowLeft"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:rotationY="180"
+        android:layout_marginEnd="5dp"
+        android:src="@drawable/arrow01"
+        app:layout_constraintBottom_toBottomOf="@+id/bid"
+        app:layout_constraintEnd_toStartOf="@+id/bid"
+        app:layout_constraintTop_toTopOf="@+id/bid" />
+
+    <FrameLayout
+        android:id="@+id/ballsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </FrameLayout>
+
+    <View
+        android:id="@+id/d1"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="132dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d2"
+        android:layout_marginTop="42dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="107dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d3"
+        android:layout_marginTop="84dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="80dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d4"
+        android:layout_marginTop="126dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="56dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d5"
+        android:layout_marginTop="166dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d6"
+        android:layout_marginTop="208dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d7"
+        android:layout_marginTop="250dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d8"
+        android:layout_marginTop="290dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <View
+        android:id="@+id/d9"
+        android:layout_marginTop="332dp"
+        android:layout_width="7dp"
+        android:layout_height="3dp"
+        android:layout_marginStart="30dp"
+        app:layout_constraintStart_toStartOf="@+id/field"
+        app:layout_constraintTop_toTopOf="@+id/field" />
+
+    <TextView
+        android:id="@+id/winText"
+        android:layout_marginTop="5dp"
+        style="@style/BasicText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/plus"
+        app:layout_constraintStart_toStartOf="@+id/balance"
+        app:layout_constraintTop_toBottomOf="@+id/balance"
+        tools:text="+100" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
